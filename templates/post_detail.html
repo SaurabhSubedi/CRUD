@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="post-entry d-flex">
+    <div class="mx-auto">
+        <h2 class="font-weight-bold" style="font-family:sans-serif">{{ post.title }}</h2>
+    <p>{{ post.body }}</p>
+        <button type="button" class="btn btn-success mx-3 my-3"><a href="{% url 'post_edit' post.pk %}" class="text-light text-decoration-none">+ Edit  Post</a></button>
+        <p><button type="button" class="btn btn-danger mx-3"><a href="{% url 'post_delete' post.pk %}" class="text-light text-decoration-none">- Delete  Post</a></button></p>
+    </div>
+
+</div>
+{% endblock content %}

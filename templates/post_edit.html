@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex" style="font-family:cursive">
+        <h1 class="mx-auto">Edit post</h1>
+        <form action="" method="post" class="mx-auto">{% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Update"/>
+        </form>
+</div>
+{% endblock content %}

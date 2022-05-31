@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+<!--{% load static %}-->
+{% block content %}
+{% for obj in object_list %}
+    <div class="post-entry d-flex">
+        <div class="mx-auto" style="font-family : sans-serif">
+            <h3 class="font-weight-bold"><a href="{% url 'post_detail' obj.pk %}" class="text-dark">{{ obj.title }}</a></h3>
+        <p>{{obj.body}}</p>
+            <hr>
+
+        </div>
+    </div>
+{% endfor %}
+{% endblock content %}
