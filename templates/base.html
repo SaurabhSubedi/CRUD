@@ -15,6 +15,15 @@
 <body>
 
 <header class="d-flex "><h1 class="mx-auto font-italic font-weight-bold" style="font-family:serif;"><a href="{% url 'home' %}">We value your opinions </a></h1></header>
+<div class="mx-3">
+    {% if user.is_authenticated %}
+    <p class=>Hi! {{user.username}}</p>
+    <button><a href="{% url 'logout' %}">LogOut</a></button>
+{% else %}
+    <p class="text-danger">You are not authenticated</p>
+    <button><a href="{% url 'login' %}">Log in </a></button>
+{% endif %}
+</div>
 <hr>
 <div class="d-flex justify-content-end">
     <button type="button" class="btn btn-primary mx-3"> <a href="{% url 'post_new' %}" class="text-light text-decoration-none"> + New Post</a></button>
